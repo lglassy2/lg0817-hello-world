@@ -1,0 +1,39 @@
+
+Tue Mar  8 12:39:19 EST 2016
+
+Python Zip Applications
+-----------------------
+
+This repo ('python_zip') is an example of using a zip file
+as an executable python application.  The result is 'executable'
+in the sense of being 'interpretable' - you need to have a python
+interpreter installed.
+
+The resulting zip file can contain multiple python packages.
+Each package will have a directory with an __init__.py 
+file to mark the directory as a python package.
+
+Subpackages follow the same logic, having their subdirectories
+with __init__.py files in them.
+
+Inside a package directory, you can have multiple python modules.
+The module name is the same as the file prefix name of a python 
+file in a package directory.   So 'red.py' and 'green.py' are 
+the module files for modules 'red' and 'green', etc.
+
+How to assemble a Python Zip Application
+----------------------------------------
+
+$ zip -r bar.zip __main__.py locpkg 
+
+You can use any level of compression desired.  Given that the 
+contents of the zip app are tiny, it really doesn't matter.  I 
+generally use either no compression (-r0) or the default level 
+of compression (-r).
+
+How to run the zip application 
+------------------------------
+
+$ python3 bar.zip <zip app command line args go here>
+
+[end of document]
